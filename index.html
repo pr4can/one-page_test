@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="RU">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Тестовое задание</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/nice-select.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/12.0.0/nouislider.min.css">	
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<header class="header">
+		<div class="header__container container">
+			<nav class="nav">
+				<a href="#personal" class="nav__item">Личная информация</a>
+				<a href="#experience" class="nav__item">Опыт</a>
+				<a href="#javascript" class="nav__item">JavaScript</a>
+				<a href="#about" class="nav__item">О себе</a>
+			</nav>
+			<div class="header__burger">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+		
+	</header>
+	<main>
+		<form action="/" method="get" class="main__container container">
+			<div class="main__title">Анкета</div>
+			<section id="personal">
+				<img src="img/icon-personal.svg" alt="" class="section__icon">
+				<div class="section__title">Личная информация</div>
+				<div class="section__input section__input-fio">
+					<input id="fio" type="text" name="fio" required value="Валуйских Константин Геннадьевич">
+					<label for="fio">ФИО</label>
+				</div>
+				<div class="section__select section__select-year">
+					<select name="year">
+						<option disabled>Год рождения</option>
+						<option value="2003">2003</option>
+						<option value="2002">2002</option>
+						<option value="2001">2001</option>
+						<option value="2000">2000</option>
+						<option value="1999">1999</option>
+						<option value="1998" selected>1998</option>
+						<option value="1997">1997</option>
+						<option value="1996">1996</option>
+						<option value="1995">1995</option>
+						<option value="1994">1994</option>
+					</select>
+				</div>
+				<div class="section__input section__input-adress">
+					<input id="adress" name="city" type="text" required value="Краснодар">
+					<label for="adress">Место проживания</label>
+				</div>
+				<div class="section__input section__input-skype">
+					<input id="skype" name="skype" type="text" required value="Не пользуюсь">
+					<label for="skype">Skype</label>
+				</div>
+				<div class="section__input section__input-email">
+					<input id="email" name="email" type="email" required value="Valyiskih1705@yandex.ru">
+					<label for="email">E-mail</label>
+				</div>
+			</section>
+			<section id="experience">
+				<img src="img/icon-experience.svg" alt="" class="section__icon">
+				<div class="section__title">Расскажите о своем опыте</div>
+				<div class="experience__container">
+					<div class="experience__item">
+						<input id="bem" name="bem" type="checkbox" class="experience__checkbox" checked>
+						<label for="bem" class="experience__mycheckbox"></label>
+						<label for="bem" class="experience__label">БЭМ/OOCSS</label>
+					</div>
+					<div class="experience__item">
+						<input id="semantika" name="semantika" type="checkbox" class="experience__checkbox" checked>
+						<label for="semantika" class="experience__mycheckbox"></label>
+						<label for="semantika" class="experience__label">Верстаю семантично</label>
+					</div>
+					<div class="experience__item">
+						<input id="webpack" name="webpack" type="checkbox" class="experience__checkbox">
+						<label for="webpack" class="experience__mycheckbox"></label>
+						<label for="webpack" class="experience__label">Webpack</label>
+					</div>
+					<div class="experience__item">
+						<input id="css" name="css" type="checkbox" class="experience__checkbox">
+						<label for="css" class="experience__mycheckbox"></label>
+						<label for="css" class="experience__label">Stylus/LESS/SASS</label>
+					</div>
+					<div class="experience__item">
+						<input id="es" name="es" type="checkbox" class="experience__checkbox">
+						<label for="es" class="experience__mycheckbox"></label>
+						<label for="es" class="experience__label">ES2015/ES2016</label>
+					</div>
+					<div class="experience__item">
+						<input id="jquery" name="jquery" type="checkbox" class="experience__checkbox" checked>
+						<label for="jquery" class="experience__mycheckbox"></label>
+						<label for="jquery" class="experience__label">jQuery</label>
+					</div>
+					<div class="experience__item">
+						<input id="svg" name="svg" type="checkbox" class="experience__checkbox" checked>
+						<label for="svg" class="experience__mycheckbox"></label>
+						<label for="svg" class="experience__label">Работаю с SVG</label>
+					</div>
+					<div class="experience__item">
+						<input id="gulp" name="gulp" type="checkbox" class="experience__checkbox">
+						<label for="gulp" class="experience__mycheckbox"></label>
+						<label for="gulp" class="experience__label">Gulp/GRUNT</label>
+					</div>
+					<div class="experience__item">
+						<input id="git" name="git" type="checkbox" class="experience__checkbox">
+						<label for="git" class="experience__mycheckbox"></label>
+						<label for="git" class="experience__label">Использую Git</label>
+					</div>
+				</div>
+			</section>
+			<section id="javascript">
+				<img src="img/icon-js.svg" alt="" class="section__icon">
+				<div class="section__title">Уровень владения JavaScript</div>
+				<div class="javascript__skills">
+					<div class="javascript__steps steps">
+						<div class="steps__item" data-value="0">Не владею</div>
+						<div class="steps__item" data-value="24">Использую готовые решения</div>
+						<div class="steps__item" data-value="50">Использую готовые решения и умею и переделывать</div>
+						<div class="steps__item" data-value="100">Пишу сложный JS с нуля</div>
+					</div>
+					<div id="javascript__slider"></div>
+					<input id="javascript__input" name="js-skills-percent" type="number" value="60">
+				</div>
+			</section>
+			<section id="about">
+				<img src="img/icon-about.svg" alt="" class="section__icon">
+				<div class="section__title section__title-about">Расскажите о себе</div>
+				<div class="section__subtitle section__subtitle-about">Напишите несколько предложений, чем привлекла наша вакансия и что вы ожидаете от работы у нас.</div>
+				<textarea name="about" class="about__textarea" placeholder="Понравилась тем, что...">В данный момент нахожусь в поиске подработки, поэтому решил рассмотреть вакансию верстальщика. Ваша вакансия в целом соответствует моим ожиданиям от подработки</textarea>
+			</section>
+			<button class="main__submit" type="submit">Готово</button>
+		</form>
+	</main>
+	<footer>
+		
+	</footer>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="js/jquery.nice-select.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/12.0.0/nouislider.min.js"></script>
+	<script src="js/script.js"></script>	
+</body>
+</html>
